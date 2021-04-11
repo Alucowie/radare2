@@ -2068,6 +2068,9 @@ static int cmd_write(void *data, const char *input) {
 	{
 		size_t len = core->blocksize;
 		const char *curcs = r_config_get (core->config, "cfg.charset");
+
+		r_str_trim_args ((char *)input);
+
 		if (R_STR_ISEMPTY (curcs)) {
 			w_handler_old (core, input + 1);
 		} else {
