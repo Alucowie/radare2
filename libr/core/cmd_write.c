@@ -2070,6 +2070,7 @@ static int cmd_write(void *data, const char *input) {
 		const char *curcs = r_config_get (core->config, "cfg.charset");
 
 		r_str_trim_args ((char *)input);
+		r_str_trim_tail ((char *)input);
 
 		if (R_STR_ISEMPTY (curcs)) {
 			w_handler_old (core, input + 1);
